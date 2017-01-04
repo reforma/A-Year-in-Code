@@ -1,3 +1,3 @@
 function showHtmlFramework(){
-  document.getElementById("Html-Framework").style.visability = "visable"
+  document.getElementById("Html-Framework").style.visibility= "visible";
 }
