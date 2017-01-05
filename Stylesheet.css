@@ -1,5 +1,6 @@
 div{
   padding-left: 20px;
+  visibility: visible;
 }
 
 h3{
@@ -8,4 +9,12 @@ h3{
 
 p{
   padding-left: 20px;
+}
+
+#Html-Framework{
+  visibility: hidden;
+}
+
+#Git-commands{
+  visibility: hidden;
 }
