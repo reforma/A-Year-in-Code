@@ -1,0 +1,39 @@
+
+<head>
+  <script src="http://fb.me/react-0.13.0.js"></script>
+  <script src="http://fb.me/JSXTransformer-0.13.0.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet"  href ="Users\Owner\Documents\GitHub\Stylesheet.Css"/>
+  <link rel="stylesheet"  href ="C:\Users\Reedw\GitHub\Stylesheet.css"/>
+</head>
+
+
+<body>
+<div class="col-12" id="Header">
+<h1>A Year in Code</h1>
+  <p> A website by William Reed</p>
+</div>
+</div>
+<div class="row"></div>
+<div id='body'></div>
+</body>
+
+<script type="text/jsx">
+  var content = React.createClass({
+    render:function(){
+      return <div id={this.props.id}>
+      <h2>{this.props.title}</h2>
+      {this.props.text}</div>
+    }
+  });
+
+var options = {
+  text:'This is the start of the conversion to using the React Language - it appears to be going fairly well so far - but the real difficulty will be in adding mulitiple bits of\
+   content thats tomorrows task',
+  id:'React-conversion',
+  title:"React Conversion"
+};
+
+var element = React.createElement(content,options)
+React.render(element,document.querySelector('#body'))
+</script>

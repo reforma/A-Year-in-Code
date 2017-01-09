@@ -1,5 +1,7 @@
 *{
   box-sizing: border-box;
+  /*border-style: dashed;
+  border-color: black;*/
   }
   body{
     background-color: #CDCDCD;
@@ -48,7 +50,7 @@
 }
 
 div{
-  padding: 50px;
+  padding: 0px 50px 0px 20px;
   visibility: visible;
   background-color: #CDCDCD;
 }
@@ -69,11 +71,17 @@ p{
   display:none;
 }
 
+#React-conversion{
+  display:block;;
+}
+
 #sidebar{
   position: fixed;
   top:auto;
 }
-
+#body{
+  padding:0px;
+}
 
 #Header{
   background-color: #B3B3B3;
