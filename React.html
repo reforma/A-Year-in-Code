@@ -1,8 +1,8 @@
-
+<!DOCTYPE html>
 <head>
   <script src="http://fb.me/react-0.13.0.js"></script>
   <script src="http://fb.me/JSXTransformer-0.13.0.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
   <link rel="stylesheet"  href ="Users\Owner\Documents\GitHub\Stylesheet.Css"/>
   <link rel="stylesheet"  href ="C:\Users\Reedw\GitHub\Stylesheet.css"/>
 </head>
@@ -13,20 +13,25 @@
 <h1>A Year in Code</h1>
   <p> A website by William Reed</p>
 </div>
-</div>
 <div class="row"></div>
-<div id='body'></div>
 </body>
 
 <script type="text/jsx">
   var content = React.createClass({
     render:function(){
-      return <div id={this.props.id}>
+      return <div className='col-9' id={this.props.id}>
       <h2>{this.props.title}</h2>
       {this.props.text}</div>
     }
   });
 
+var buttongroup = React.createClass({
+  render:function(){
+    return <div id="sidebar" className="btn-group-vertical col-3">
+      <button  onclick="showHtmlFramework()" type="button" className="btn btn-primary">HTML Framework</button>
+      </div>
+  }
+})
 var options = {
   text:'This is the start of the conversion to using the React Language - it appears to be going fairly well so far - but the real difficulty will be in adding mulitiple bits of\
    content thats tomorrows task',
@@ -35,5 +40,5 @@ var options = {
 };
 
 var element = React.createElement(content,options)
-React.render(element,document.querySelector('#body'))
+React.render(element,document.querySelector('.row'))
 </script>
