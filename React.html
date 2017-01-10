@@ -19,26 +19,42 @@
 <script type="text/jsx">
   var content = React.createClass({
     render:function(){
-      return <div className='col-9' id={this.props.id}>
+      return <div><div className='col-9' id={this.props.id}>
       <h2>{this.props.title}</h2>
-      {this.props.text}</div>
+      {this.props.text}</div></div>
     }
   });
 
-var buttongroup = React.createClass({
+  var contentSections = React.createClass({
+    render:function() {
+      var list = this.props.contentData.map(function(contentProps){
+      return <content {...contentProps} />
+  });
+
+  return <div>{list}</div>
+}
+});
+/*var buttongroup = React.createClass({
   render:function(){
     return <div id="sidebar" className="btn-group-vertical col-3">
       <button  onclick="showHtmlFramework()" type="button" className="btn btn-primary">HTML Framework</button>
       </div>
   }
-})
+})*/
+
 var options = {
+  contentData:[{
   text:'This is the start of the conversion to using the React Language - it appears to be going fairly well so far - but the real difficulty will be in adding mulitiple bits of\
    content thats tomorrows task',
   id:'React-conversion',
   title:"React Conversion"
+},{
+  text:'This is the second content section',
+  id:'React-conversion',
+  title:"Second section"
+}]
 };
 
-var element = React.createElement(content,options)
+var element = React.createElement(contentSections,options)
 React.render(element,document.querySelector('.row'))
 </script>
