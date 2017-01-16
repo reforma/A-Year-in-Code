@@ -14,9 +14,10 @@
 </body>
 
 <script type="text/jsx">
+
   var Content = React.createClass({
     render: function() {
-      return <div className='col-9' id={this.props.id}>
+      return <div className='col-9'>
        <h2>{this.props.title}</h2>
        {this.props.text}</div>
     }
@@ -42,12 +43,10 @@
 
 var options = {
   contentData: [{
-    id:'react'
   text:'This is the start of the conversion to using the React Language - it appears to be going fairly well so far - but the real difficulty will be in adding mulitiple bits of\
    content thats tomorrows task',
   title:"React Conversion"
 },{
-  id:'html'
   text:'tart of the conversion to using the React Language - it appears to be going fairly well so far - but the real difficulty will be in adding mulitiple bits of\
    content thats tomorrows task',
   title:"React Co"
@@ -56,4 +55,5 @@ var options = {
 
   var element = React.createElement(ContentList, options);
   React.render(element, document.querySelector('.row'));
+
 </script>
