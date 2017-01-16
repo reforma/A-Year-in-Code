@@ -1,13 +1,10 @@
-<!DOCTYPE html>
 <head>
   <script src="http://fb.me/react-0.13.0.js"></script>
   <script src="http://fb.me/JSXTransformer-0.13.0.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-  <link rel="stylesheet"  href ="Users\Owner\Documents\GitHub\Stylesheet.Css"/>
-  <link rel="stylesheet"  href ="C:\Users\Reedw\GitHub\Stylesheet.css"/>
+ <link rel="stylesheet"  href ="C:\Users\Owner\Documents\GitHub\Stylesheet.css"/>
+<link rel="stylesheet"  href ="C:\Users\Reedw\GitHub\Stylesheet.css"/>
 </head>
-
-
 <body>
 <div class="col-12" id="Header">
 <h1>A Year in Code</h1>
@@ -17,28 +14,46 @@
 </body>
 
 <script type="text/jsx">
-  var content = React.createClass({
-    render:function(){
+  var Content = React.createClass({
+    render: function() {
       return <div className='col-9' id={this.props.id}>
-      <h2>{this.props.title}</h2>
-      {this.props.text}</div>
+       <h2>{this.props.title}</h2>
+       {this.props.text}</div>
     }
   });
 
-var buttongroup = React.createClass({
-  render:function(){
-    return <div id="sidebar" className="btn-group-vertical col-3">
-      <button  onclick="showHtmlFramework()" type="button" className="btn btn-primary">HTML Framework</button>
+  var Contentdiv = React.createClass({
+    render: function() {
+      return <Content title={this.props.title} text={this.props.text} />
+    }
+  });
+
+  var ContentList = React.createClass({
+    render: function() {
+      var list = this.props.contentData.map(function(contentProps){
+        return <Contentdiv {...contentProps} />
+      });
+
+      return <div>
+      {list}
       </div>
-  }
-})
+    }
+  });
+
 var options = {
+  contentData: [{
+    id:'react'
   text:'This is the start of the conversion to using the React Language - it appears to be going fairly well so far - but the real difficulty will be in adding mulitiple bits of\
    content thats tomorrows task',
-  id:'React-conversion',
   title:"React Conversion"
+},{
+  id:'html'
+  text:'tart of the conversion to using the React Language - it appears to be going fairly well so far - but the real difficulty will be in adding mulitiple bits of\
+   content thats tomorrows task',
+  title:"React Co"
+}]
 };
 
-var element = React.createElement(content,options)
-React.render(element,document.querySelector('.row'))
+  var element = React.createElement(ContentList, options);
+  React.render(element, document.querySelector('.row'));
 </script>
