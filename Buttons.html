@@ -3,10 +3,12 @@
   <script src="http://fb.me/JSXTransformer-0.13.0.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
  <link rel="stylesheet"  href ="C:\Users\Owner\Documents\GitHub\Stylesheet.css"/>
-<!--<link rel="stylesheet"  href ="C:\Users\Reedw\GitHub\Stylesheet.css"/>-->
+<link rel="stylesheet"  href ="C:\Users\Reedw\GitHub\Stylesheet.css"/>
 </head>
 <body>
-<div class="row"></div>
+<div class="row">
+  <div class="btn-group-vertical"><div>
+</div>
 </body>
 
 <script type="text/jsx">
@@ -24,24 +26,23 @@ var Buttongroup = React.createClass({
 
 var Buttonlist = React.createClass({
   render: function() {
-    var list =this.props.buttonData.map(function(buttonProps){
+    var list =this.props.buttonText.map(function(buttonProps){
       return <Buttongroup {...buttonProps} />
     });
 
-    return <div>
+    return<div>
     {list}
     </div>
   }
 });
 
 var options = {
-  buttonData:[{
-  buttonText:'React',
-},{
-  buttonText:'html',
-}]
+  buttonText:['React',
+  'html',
+'JavaScript']
 };
 
-  var element = React.createElement(Buttongroup, options);
-  React.render(element, document.querySelector('.row'));
+
+  var element = React.createElement(Buttonlist, options);
+  React.render(element, document.querySelector('.btn-group-vertical'));
 </script>
