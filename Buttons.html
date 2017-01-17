@@ -1,0 +1,47 @@
+<head>
+  <script src="http://fb.me/react-0.13.0.js"></script>
+  <script src="http://fb.me/JSXTransformer-0.13.0.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+ <link rel="stylesheet"  href ="C:\Users\Owner\Documents\GitHub\Stylesheet.css"/>
+<!--<link rel="stylesheet"  href ="C:\Users\Reedw\GitHub\Stylesheet.css"/>-->
+</head>
+<body>
+<div class="row"></div>
+</body>
+
+<script type="text/jsx">
+var Button = React.createClass({
+  render: function() {
+    return <button className='btn btn-primary' type='button'>{this.props.buttonText}</button>
+  }
+});
+
+var Buttongroup = React.createClass({
+  render: function() {
+    return <Button buttonText={this.props.buttonText} />
+  }
+});
+
+var Buttonlist = React.createClass({
+  render: function() {
+    var list =this.props.buttonData.map(function(buttonProps){
+      return <Buttongroup {...buttonProps} />
+    });
+
+    return <div>
+    {list}
+    </div>
+  }
+});
+
+var options = {
+  buttonData:[{
+  buttonText:'React',
+},{
+  buttonText:'html',
+}]
+};
+
+  var element = React.createElement(Buttongroup, options);
+  React.render(element, document.querySelector('.row'));
+</script>
