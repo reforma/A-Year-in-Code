@@ -25,12 +25,12 @@ var ButtonList = React.createClass({
       return <ButtonItem buttonText={item} /> //this bit created the item array object
     })
 
-    return <div className='btn-group-vertical'>{list}</div> //this uses the list variable 
+    return <div className='btn-group-vertical col-3'>{list}</div> //this uses the list variable
   }
 });
 
 var options = {
-  buttonText:['React','Html']
+  buttonText:['React','Html','Javascript']
 };
 
 var element = React.createElement(ButtonList, options);
