@@ -10,7 +10,7 @@
 </div>
 </body>
 
-<script type="text/jsx">
+<script type="text/jsx"> //creates a button
 var ButtonItem = React.createClass({
   render: function() {
     return <button className='btn btn-primary'>
@@ -22,10 +22,10 @@ var ButtonItem = React.createClass({
 var ButtonList = React.createClass({
   render: function(){
     var list = this.props.buttonText.map(function(item){
-      return <ButtonItem buttonText={item} />
+      return <ButtonItem buttonText={item} /> //this bit created the item array object
     })
 
-    return <div>{list}</div>
+    return <div className='btn-group-vertical'>{list}</div> //this uses the list variable 
   }
 });
 
