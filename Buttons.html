@@ -6,43 +6,33 @@
 <link rel="stylesheet"  href ="C:\Users\Reedw\GitHub\Stylesheet.css"/>
 </head>
 <body>
-<div class="row">
-  <div class="btn-group-vertical"><div>
+<div class='row'>
 </div>
 </body>
 
 <script type="text/jsx">
-var Button = React.createClass({
+var ButtonItem = React.createClass({
   render: function() {
-    return <button className='btn btn-primary' type='button'>{this.props.buttonText}</button>
+    return <button className='btn btn-primary'>
+    {this.props.buttonText}
+    </button>
   }
 });
 
-var Buttongroup = React.createClass({
-  render: function() {
-    return <Button buttonText={this.props.buttonText} />
-  }
-});
+var ButtonList = React.createClass({
+  render: function(){
+    var list = this.props.buttonText.map(function(item){
+      return <ButtonItem buttonText={item} />
+    })
 
-var Buttonlist = React.createClass({
-  render: function() {
-    var list =this.props.buttonText.map(function(buttonProps){
-      return <Buttongroup {...buttonProps} />
-    });
-
-    return<div>
-    {list}
-    </div>
+    return <div>{list}</div>
   }
 });
 
 var options = {
-  buttonText:['React',
-  'html',
-'JavaScript']
+  buttonText:['React','Html']
 };
 
-
-  var element = React.createElement(Buttonlist, options);
-  React.render(element, document.querySelector('.btn-group-vertical'));
+var element = React.createElement(ButtonList, options);
+React.render(element, document.querySelector('.row'));
 </script>
