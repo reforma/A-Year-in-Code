@@ -9,7 +9,7 @@
 [class*="col-"]{
   width:100%;
   float:left;
-  padding:15px;
+  padding:0px 15px 15px 15px;
 }
 
 @@media only screen and (min-width:600px) {
@@ -41,6 +41,9 @@
   .col-10 {width:83.33%;}
   .col-11 {width:91.66%;}
   .col-12 {width:100%;}
+}
+.row{
+  padding:0px;
 }
 
 .row::after{
@@ -86,7 +89,6 @@ p{
 .nav{
   display:flex;
   flex-wrap: wrap;
-  border-style: solid;
   width:100%;
   padding-right: 0px;
   background-color: white;
@@ -103,7 +105,9 @@ p{
 .nav li:nth-child(4){
   margin:auto;
 }
+.nav-bar {
 
+}
 .nav-btn{
 transition: all 500ms ease;
 }
