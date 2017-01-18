@@ -83,6 +83,45 @@ p{
   padding:0px;
 }
 
-#Header{
-  background-color: #B3B3B3;
+.nav{
+  display:flex;
+  flex-wrap: wrap;
+  border-style: solid;
+  width:100%;
+  padding-right: 0px;
+  background-color: white;
+}
+
+.nav li {
+  margin: 20px;
+  }
+
+.nav li:nth-child(5){
+  margin-left: auto;
+}
+
+.nav li:nth-child(4){
+  margin:auto;
+}
+
+.nav-btn{
+transition: all 500ms ease;
+}
+
+.nav-btn:before{
+content: "";
+position: absolute;
+top: 0px;
+left: 0px;
+right: 0px;
+width: 0px;
+height: 34px;
+background-color: rgba(0,50,255,0.1);
+border-radius: 5px;
+transition: all 1s ease;
+}
+
+.nav-btn:hover:before{
+  width: 100%;
+
 }
