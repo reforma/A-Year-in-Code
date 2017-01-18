@@ -12,7 +12,7 @@
   padding:0px 15px 15px 15px;
 }
 
-@@media only screen and (min-width:600px) {
+@media only screen and (min-width:600px) {
   /*For Tablets*/
   .col-m-1 {width:8.33%;}
   .col-m-2 {width:16.66%;}
