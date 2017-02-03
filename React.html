@@ -1,61 +1,67 @@
-<head>
-  <script src="http://fb.me/react-0.13.0.js"></script>
-  <script src="http://fb.me/JSXTransformer-0.13.0.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
- <link rel="stylesheet"  href ="C:\Users\Owner\Documents\GitHub\Stylesheet.css"/>
-<link rel="stylesheet"  href ="C:\Users\Reedw\GitHub\Stylesheet.css"/>
-</head>
-<body>
-<div class="col-12" id="Header">
-<h1>A Year in Code</h1>
-  <p> A website by William Reed</p>
-</div>
-<div class="row"></div>
-</body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>React</title>
+  </head>
+  <body>
+    <div id="app"></div>
 
-<script type="text/jsx">
+    <script src="https://fb.me/react-15.0.0.js"></script>
+    <script src="https://fb.me/react-dom-15.0.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+    <script type="text/babel">
 
-  var Content = React.createClass({
-    render: function() {
-      return <div className='col-9' id={this.props.id}>
-       <h2>{this.props.title}</h2>
-       {this.props.text}</div>
-    }
-  });
-
-  var Contentdiv = React.createClass({
-    render: function() {
-      return <Content title={this.props.title} text={this.props.text} />
-    }
-  });
-
-  var ContentList = React.createClass({
-    render: function() {
-      var list = this.props.contentData.map(function(contentProps){
-        return <Contentdiv {...contentProps} />
-      });
-
-      return <div>
-      {list}
+class MyApp extends React.Component {
+  constructor(props) {
+		super(props);
+    this.state = {
+      header: '',
+      subtitle:'',
+      body:''
+          }
+  }
+  render () {
+    return (
+      <div>
+      <Postbody
+      header={this.state.header}
+      subtitle={this.state.subtitle}
+      body={this.state.body}
+      />
+      <Input />
       </div>
-    }
-  });
-
-var options = {
-  contentData: [{
-    id:'react',
-  text:'This is the start of the conversion to using the React Language - it appears to be going fairly well so far - but the real difficulty will be in adding mulitiple bits of\
-   content thats tomorrows task',
-  title:"React Conversion"
-},{
-  id:'html',
-  text:'tart of the conversion to using the React Language - it appears to be going fairly well so far - but the real difficulty will be in adding mulitiple bits of\
-   content thats tomorrows task',
-  title:"React Co"
-}]
+    );
+  }
 };
 
-  var element = React.createElement(ContentList, options);
-  React.render(element, document.querySelector('.row'));
+class Postbody extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render () {
+    return (
+      <div>
+      <h1>{this.props.header}</h1>
+      <h4>{this.props.subtitle}</h4>
+      <p>{this.props.body}</p>
+      </div>
+    );
+  }
+};
 
-</script>
+class Input extends React.Component {
+  render() {
+    return (
+      <div>
+      <input onChange = {this.inputChange}></input>
+      <button onClick={this.Submit}>Submit</button>
+      </div>
+    );
+  }
+};
+
+
+ReactDOM.render(<MyApp />,document.getElementById('app'));
+    </script>
+  </body>
+</html>
